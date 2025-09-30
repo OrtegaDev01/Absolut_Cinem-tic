@@ -1,0 +1,27 @@
+body{
+    background-image: url("../img/fundotij.jpg");
+    background-size: 100% 80%;
+    display: flex;
+    justify-content: center;
+}
+
+form{
+    color:#ffffff;
+    border-radius: 51px;
+}
+
+#cxlogin{
+    background-color: #444242;
+    border: 74px solid black;
+    width: 400px;
+    height: 550px;
+    border-radius: 51px;
+    text-align: center;
+    align-self:center;
+    margin-top: 130px;
+}
+
+h1{
+    color: #ffffff;
+}
+
