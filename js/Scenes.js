@@ -35,7 +35,7 @@ const scenes = {
             this.divBotoes.innerHTML = `
                 <button id="roupa-verde" onclick="scenes['characterCustomizerScene'].changeCloth('camisaVerde')">Roupa Verde</button>
                 <button id="roupa-vermelha" onclick="scenes['characterCustomizerScene'].changeCloth('camisaVermelha')">Roupa Vermelha</button>
-                <button id="roupa-branca" onclick="scenes['characterCustomizerScene'].changeCloth('camisaBranca')">Roupa Branca</button
+                <button id="roupa-branca" onclick="scenes['characterCustomizerScene'].changeCloth('camisaBranca')">Roupa Branca</button>
             `
             this.divBotoes.id = "divBotoes"
             this.divBotoes.classList.add("scene-element")
@@ -86,4 +86,5 @@ const scenes = {
         })
         isSceneDisplayed = false
     }
+
 }
