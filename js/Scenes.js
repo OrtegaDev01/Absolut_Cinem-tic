@@ -1,5 +1,17 @@
 let isSceneDisplayed = false
 
+const player = new Player({
+    src:"img/assetsJogo/player/playerPadrao.png",
+    x:176, y:99, width: 64, height: 64,
+    animations:{
+        "idle":[
+                [0, 0], [64, 0], [128, 0],
+                [0, 64], [64, 64], [128, 64],
+                [0, 128]
+            ]
+    }, maxFrame: 12
+})
+
 const scenes = {
     "StartScene":{
         draw:function(){
@@ -17,7 +29,7 @@ const scenes = {
             gameWindow.appendChild(this.name)
 
             document.getElementById("start-button").addEventListener("click", function(){
-                scene = "characterCustomizerScene"
+                scene = "rua1"
                 scenes.evacuate()
             })
             isSceneDisplayed = true
@@ -78,6 +90,20 @@ const scenes = {
 
             gameWindow.appendChild(this.skip)
             isSceneDisplayed = true
+        }
+    },
+    "rua1":{
+        "predio1": new GameObject({
+                x:40, y:40, width:128, height:128, src:"img/assetsJogo/estruturas/predio_1.png"
+        }),
+        draw:function(){
+            player.startMovement()
+            canvas.style.backgroundColor = "black"
+            isSceneDisplayed = true
+        }, sceneAnimations:function(){
+            scenes["rua1"]["predio1"].draw()
+            player.draw()
+            player.animatePlayer("idle")
         }
     }, evacuate:function(){
         let sceneElements = document.querySelectorAll(".scene_element")
