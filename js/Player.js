@@ -36,7 +36,7 @@ class Player {
         ctx.drawImage(this.image,
             this.posX, this.posY,
             this.width, this.height,
-            176, 99,
+            144, 99,
             this.width, this.height
         )
 

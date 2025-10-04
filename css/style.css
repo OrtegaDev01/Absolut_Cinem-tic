@@ -100,6 +100,11 @@ h1 {
 }
 #title {
     display: flex;
+    width: 550px;
+    position: relative;
+    justify-content: space-between;
+    top: 10px;
+    left: 20px;
 }
 #tabela hr{
     width: 550px;
@@ -111,16 +116,8 @@ h1 {
 #pontuacao, #nome-usuario {
     font-size: 1.2rem;
 }
-#nome-usuario {
-    position: relative;
-    top: 10px;
-    left: 20px;
-}
-#pontuacao {
-    position: relative;
-    left: 300px;
-    top: 10px;
-}
+
+
 
 #voltar {
     background-color: #d1d1d1;
