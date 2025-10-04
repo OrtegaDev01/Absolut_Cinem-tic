@@ -1,1 +1,1 @@
-Versão com exemplo de customizador de personagem
+Versão com player em branco e movimento
