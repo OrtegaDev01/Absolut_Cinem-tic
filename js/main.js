@@ -1,14 +1,14 @@
-const gameWindow = document.getElementById("game-window")
-const canvas = document.getElementById("canvas")
-const ctx = canvas.getContext("2d")
+const gameWindow = document.getElementById("game-window");
+const canvas = document.getElementById("canvas");
+const ctx = canvas.getContext("2d");
 
-let scene = "StartScene"
+let scene = "StartScene";
 
-function GameLoop(){
-    if(!isSceneDisplayed){
-        scenes[scene].draw()
-    };
-    
-    requestAnimationFrame(GameLoop)
+function GameLoop() {
+  if (!isSceneDisplayed) {
+    scenes[scene].draw();
+  }
+
+  requestAnimationFrame(GameLoop);
 }
-GameLoop()
+GameLoop();
