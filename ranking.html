@@ -1,35 +1,38 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-br">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bitcount+Grid+Double+Ink:wght@100..900&family=Lilita+One&display=swap" rel="stylesheet">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bitcount+Grid+Double+Ink:wght@100..900&family=Lilita+One&display=swap"
+      rel="stylesheet"
+    />
     <title>Ranking</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <main>
-        <h1>Ranking</h1>
-        <button id="voltar" onclick="voltar()">Tela inicial</button>
-        <div id="tabela">
-            <div id="title">
-                <p id="nome-usuario">Nome de Usuário:</p>
-                <p id="pontuacao">Pontuação:</p>
-            </div>
-            <hr>
+      <h1>Ranking</h1>
+      <input
+        name=""
+        type="button"
+        value="Tela Inicial"
+        id="voltar"
+        onclick="window.location.href='tela_inicial.html'"
+      />
+      <div id="tabela">
+        <div id="title">
+          <p id="nome-usuario">Nome de Usuário</p>
+          <p id="pontuacao">Pontuação</p>
         </div>
+
+        <hr />
+      </div>
+
+      <script src="js/ranking.js"></script>
     </main>
-
-    <script>
-        function voltar(){
-            window.location = "tela_inicial.html"
-        }
-    </script>
-
-</body>
-
+  </body>
 </html>

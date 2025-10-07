@@ -42,7 +42,7 @@ h1 {
     cursor: pointer;
     transition: all 400ms;
 }
-#trocarUsuario{
+#trocarUsuario {
     width: 200px;
     background-color: cornsilk;
     filter: brightness(0.7);
@@ -56,11 +56,12 @@ h1 {
     transition: all 400ms;
 }
 
-#ranking, #trocarUsuario {
+#ranking,
+#trocarUsuario {
     padding: 5px;
     font-family: "Lilita One";
 }
-#buttons{
+#buttons {
     display: flex;
     width: 400px;
     margin: 10px auto;
@@ -73,7 +74,7 @@ h1 {
     color: black;
 }
 
-#start-button{
+#start-button {
     position: absolute;
     width: 100px;
     font-family: "Lilita One";
@@ -106,18 +107,17 @@ h1 {
     top: 10px;
     left: 20px;
 }
-#tabela hr{
+#tabela hr {
     width: 550px;
     height: 1px;
     transform: scale(1);
     position: relative;
 }
 
-#pontuacao, #nome-usuario {
+#pontuacao,
+#nome-usuario {
     font-size: 1.2rem;
 }
-
-
 
 #voltar {
     background-color: #d1d1d1;
@@ -133,7 +133,7 @@ h1 {
     cursor: pointer;
     transition: all 400ms;
 }
-#voltar:hover{
+#voltar:hover {
     transform: scale(1.1);
     filter: brightness(1);
 }
@@ -203,7 +203,7 @@ h1 {
     width: 190px;
     transform: scale(0.6);
     display: flex;
-    flex-direction:column;
+    flex-direction: column;
     gap: 10px;
 }
 
@@ -222,15 +222,26 @@ h1 {
     background-color: white;
 }
 
-#roupa-verde, #roupa-vermelha, #roupa-branca {
+#roupa-verde,
+#roupa-vermelha,
+#roupa-branca {
     width: 190px;
     font-size: 1.5rem;
     transition: all 400ms;
     cursor: pointer;
     font-family: "Lilita One";
 }
-#roupa-verde:hover, #roupa-vermelha:hover, #roupa-branca:hover{
+#roupa-verde:hover,
+#roupa-vermelha:hover,
+#roupa-branca:hover {
     transition: all 400ms;
     filter: brightness(0.7);
     transform: scale(1.1);
+}
+
+.celula {
+    display: flex;
+    width: 460px;
+    justify-content: space-between;
+    margin: 5px auto;
 }
