@@ -1,8 +1,9 @@
-let nome_usuario = JSON.parse(localStorage.getItem("usuarios"));
-// let pontos = JSON.parse(localStorage.getItem('pontos'))
-for (let index = 0; index < nome_usuario.length; index++) {
+let jogadores = JSON.parse(localStorage.getItem("usuarios")).sort(
+  (ranking_maior, ranking_menor) => ranking_maior.pontos - ranking_menor.pontos,
+);
+for (let index = 0; index < jogadores.length; index++) {
   let div = document.createElement("div");
-  div.innerHTML = `<p>${nome_usuario[index].nome}</p> <p> ${nome_usuario[index].pontos}</p>`;
+  div.innerHTML = `<p>${jogadores[index].nome}</p>  <p> ${jogadores[index].pontos}</p>`;
   div.classList.add("celula");
   document.getElementById("tabela").appendChild(div);
 }
