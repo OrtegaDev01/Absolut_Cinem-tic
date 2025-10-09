@@ -144,7 +144,9 @@ h1 {
     align-items: center;
     border-radius: 10px;
     height: 30px;
-    width: 300px;
+    width: max-content;
+    padding-left: 4px;
+    padding-right: 4px;
     display: flex;
     font-weight: 300;
     left: 20px;
@@ -241,7 +243,8 @@ h1 {
 
 .celula {
     display: flex;
-    width: 460px;
+    width: 530px;
+
     justify-content: space-between;
     margin: 5px auto;
 }
