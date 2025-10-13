@@ -3,7 +3,7 @@ let jogadores = JSON.parse(localStorage.getItem("usuarios")).sort(
 );
 for (let index = 0; index < jogadores.length; index++) {
   let div = document.createElement("div");
-  div.innerHTML = `<p>${jogadores[index].nome}</p>  <p>${jogadores[index].pontos}</p>;`;
+  div.innerHTML = `<p>${jogadores[index].nome}</p>  <p>${jogadores[index].pontos}</p>`;
   div.classList.add("celula");
-  document.getElementById("tabela").appendChild(div);
+  document.getElementById("jogadores").appendChild(div);
 }

@@ -248,3 +248,16 @@ h1 {
     justify-content: space-between;
     margin: 5px auto;
 }
+
+#jogadores{
+
+    overflow-y: scroll;
+
+
+
+}
+
+html {
+    scrollbar-width: thin; /* Can also be 'auto' or 'none' */
+    scrollbar-color: #888  white; /* thumb-color track-color */
+  }

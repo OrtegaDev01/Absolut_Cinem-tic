@@ -2,7 +2,11 @@ const form = document.getElementById("form_index");
 
 form.addEventListener("submit", function (evento) {
   evento.preventDefault();
-  let usuarios = [];
+  let  jogadores = [];
+  if(JSON.parse(localStorage.getItem("usuarios")) != null){
+
+    jogadores = JSON.parse(localStorage.getItem("usuarios"))
+  }
   const name_user = document.getElementById("nome").value;
   const email_user = document.getElementById("email").value;
   const pass_user = document.getElementById("senha").value;
@@ -14,13 +18,13 @@ form.addEventListener("submit", function (evento) {
   ) {
     alert("Preencha todos os dados");
   } else {
-    usuarios.push({
+    jogadores.push({
       nome: name_user,
       email: email_user,
       senha: pass_user,
       pontos: 0,
     });
-    localStorage.setItem("usuarios", JSON.stringify(usuarios));
+    localStorage.setItem("usuarios", JSON.stringify(jogadores));
     localStorage.setItem("usuario", name_user);
     window.location = "tela_inicial.html";
   }
