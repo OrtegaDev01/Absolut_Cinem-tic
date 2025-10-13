@@ -28,7 +28,7 @@ const scenes = {
             gameWindow.appendChild(this.name)
 
             document.getElementById("start-button").addEventListener("click", function(){
-                scene = "rua1"
+                scene = "cinema"
                 scenes.evacuate()
             })
             isSceneDisplayed = true
@@ -91,29 +91,37 @@ const scenes = {
             isSceneDisplayed = true
         }
     },
-    "rua1":{
-        "planta1": new GameObject({
+    "cinema":{
+        "GameObjects":{
+            "parede1": new GameObject({
+                    x:30, y:-50, width:200, height:120, src:"img/assetsJogo/objetos/paredeinicial.png"
+            }),
+            "chao": new Chao({
+                x:30, y:70, width:200, height:250, color:"#ab4545"
+            }),
+            "chao2": new Chao({
+                x:230, y:70, width:200, height:250, color:"#ab4545"
+            }),
+            "planta1": new GameObject({
                 x:40, y:45, width:32, height:32, src:"img/assetsJogo/objetos/planta.png"
-        }),
-        "planta2": new GameObject({
-                x:190, y:45, width:32, height:32, src:"img/assetsJogo/objetos/planta.png"
-        }),
-        "parede1": new GameObject({
-                x:30, y:-50, width:200, height:120, src:"img/assetsJogo/objetos/paredeinicial.png"
-        }),
-        "tapete": new GameObject({
-                x:93, y:75, width:80, height: 32, src:"img/assetsJogo/objetos/tapete.png"
-        }),
+            }),
+            "planta2": new GameObject({
+                    x:190, y:45, width:32, height:32, src:"img/assetsJogo/objetos/planta.png"
+            }),
+            "tapete": new GameObject({
+                    x:93, y:75, width:80, height: 32, src:"img/assetsJogo/objetos/tapete.png"
+            })
+            
+        }
+        ,
         draw:function(){
             player.startMovement()
             canvas.style.backgroundColor = "black"
             isSceneDisplayed = true
         }, sceneAnimations:function(){
-            scenes["rua1"]["parede1"].draw()
-            scenes["rua1"]["planta1"].draw()
-            scenes["rua1"]["planta2"].draw()
-            scenes["rua1"]["tapete"].draw()
-
+            Object.keys(scenes["cinema"]["GameObjects"]).forEach(function(e){
+                scenes["cinema"]["GameObjects"][e].draw()
+            })
             player.draw()
             player.animatePlayer("idle")
         }
