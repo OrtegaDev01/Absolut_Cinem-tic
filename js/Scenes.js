@@ -92,27 +92,28 @@ const scenes = {
         }
     },
     "rua1":{
-        "predio1": new GameObject({
-                x:40, y:40, width:128, height:128, src:"img/assetsJogo/estruturas/predio_1.png"
+        "planta1": new GameObject({
+                x:40, y:45, width:32, height:32, src:"img/assetsJogo/objetos/planta.png"
         }),
-        "predio2": new GameObject({
-                x:200, y:-200, width:256, height: 320, src:"img/assetsJogo/estruturas/predio_2.png"
+        "planta2": new GameObject({
+                x:190, y:45, width:32, height:32, src:"img/assetsJogo/objetos/planta.png"
         }),
-        "predio3": new GameObject({
-                x:300, y:-30, width:256, height: 200, src:"img/assetsJogo/estruturas/predio_3.png"
+        "parede1": new GameObject({
+                x:30, y:-50, width:200, height:120, src:"img/assetsJogo/objetos/paredeinicial.png"
         }),
-        "market": new GameObject({
-                x:-150, y:-30, width:180, height:180, src:"img/assetsJogo/estruturas/market.png"
+        "tapete": new GameObject({
+                x:93, y:75, width:80, height: 32, src:"img/assetsJogo/objetos/tapete.png"
         }),
         draw:function(){
             player.startMovement()
             canvas.style.backgroundColor = "black"
             isSceneDisplayed = true
         }, sceneAnimations:function(){
-            scenes["rua1"]["predio1"].draw()
-            scenes["rua1"]["predio2"].draw()
-            scenes["rua1"]["predio3"].draw()
-            scenes["rua1"]["market"].draw()
+            scenes["rua1"]["parede1"].draw()
+            scenes["rua1"]["planta1"].draw()
+            scenes["rua1"]["planta2"].draw()
+            scenes["rua1"]["tapete"].draw()
+
             player.draw()
             player.animatePlayer("idle")
         }
