@@ -18,6 +18,15 @@ class Player {
         this.maxFrame = config.maxFrame
 
         this.dadosTeclado = {}
+
+        this.colidindo = false
+
+        this.colisao = {
+            left: false,
+            right: false,
+            top: false,
+            bottom: false
+        }
     }
     startMovement(){
         window.addEventListener("keydown", e => {
@@ -33,6 +42,38 @@ class Player {
         })
     }
     draw(){
+        this.colidindo = false
+        Object.keys(scenes[scene]["GameObjects"]).forEach(e => {
+            if( scenes[scene]["GameObjects"][e] instanceof Estrutura){
+                if (scenes[scene]["GameObjects"][e].checkCollision() == true){
+                    this.colidindo = true
+                    if(scenes[scene]["GameObjects"][e].checkTypeOfCollision()["top"]){
+                        this.colisao["top"] = true
+                    }
+                    if(scenes[scene]["GameObjects"][e].checkTypeOfCollision()["bottom"]){
+                        this.colisao["bottom"] = true
+                    }
+                    if(scenes[scene]["GameObjects"][e].checkTypeOfCollision()["left"]){
+                        this.colisao["left"] = true
+                    }
+                    if(scenes[scene]["GameObjects"][e].checkTypeOfCollision()["right"]){
+                        this.colisao["right"] = true
+                    }
+                } 
+            }
+        })
+
+        if(!this.colidindo){
+            this.colisao = {
+                "lef":false,
+                "right":false,
+                "bottom":false,
+                "top":false
+            }
+        }
+
+        
+
         ctx.drawImage(this.image,
             this.posX, this.posY,
             this.width, this.height,
@@ -40,18 +81,21 @@ class Player {
             this.width, this.height
         )
 
-        if(this.dadosTeclado["w"]){
+        if(this.dadosTeclado["w"] && !this.colisao["bottom"]){
             this.y -= 1
         }
-        if(this.dadosTeclado["s"]){
+        if(this.dadosTeclado["s"] && !this.colisao["top"]){
             this.y += 1
         }
-        if(this.dadosTeclado["a"]){
+        if(this.dadosTeclado["a"] && !this.colisao["right"]){
             this.x -= 1
         }
-        if(this.dadosTeclado["d"]){
+        if(this.dadosTeclado["d"] && !this.colisao["left"]){
             this.x += 1
         }
+    }
+    checkCollision(){
+
     }
     animatePlayer(animation){
         if(this.animations[animation]){

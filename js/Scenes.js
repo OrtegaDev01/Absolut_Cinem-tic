@@ -93,7 +93,7 @@ const scenes = {
     },
     "cinema":{
         "GameObjects":{
-            "parede1": new GameObject({
+            "parede1": new Estrutura({
                     x:30, y:-50, width:200, height:120, src:"img/assetsJogo/objetos/paredeinicial.png"
             }),
             "chao": new Chao({
