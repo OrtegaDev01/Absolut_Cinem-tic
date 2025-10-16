@@ -19,8 +19,8 @@ class Estrutura {
     checkCollision(){
         return(player.x < this.x +this.width && // player.x < posInitialXdoObjeto + widthDoObjeto
                 player.x+player.width > this.x && // player.x+player.width > posInitialXdoObjeto
-                player.y < this.y+this.height && // player.y < posInitialYdoObjeto + heightDoObjeto
-                player.y+player.height > this.y // player.y+player.height > posInitialYdoObjeto
+                player.y +30< this.y+this.height && // player.y < posInitialYdoObjeto + heightDoObjeto
+                player.y+30+player.height > this.y // player.y+player.height > posInitialYdoObjeto
         )
     }
     
@@ -32,26 +32,26 @@ class Estrutura {
     
         if( player.x < this.x+this.width+2 &&
             player.x+player.width > this.x+this.width &&
-            player.y < this.y+this.height+2 &&
-            player.y+player.height > this.y){
+            player.y +30< this.y+this.height+2 &&
+            player.y+30+player.height > this.y){
                 lados["right"] = true
         }
         if( player.x < this.x+this.width -2+3 &&
             player.x+player.width > this.x-2 &&
-            player.y < this.y+this.height+2 &&
-            player.y+player.height > this.y+this.height){
+            player.y +30< this.y+this.height+2 &&
+            player.y+30+player.height > this.y+this.height){
                 lados["bottom"] = true
         }
         if( player.x < this.x+this.width -2+3 &&
             player.x+player.width > this.x &&
-            player.y < this.y-2 &&
-            player.y+player.width > this.y-2){
+            player.y +30< this.y-2 &&
+            player.y+30+player.width > this.y-2){
                 lados["top"] = true
         }    
         if( player.x < this.x-2+3 &&
             player.x+player.width > this.x-2 &&
-            player.y < this.y+this.height &&
-            player.y+player.height > this.InitialY-2){
+            player.y +30< this.y+this.height &&
+            player.y+30+player.height > this.InitialY-2){
                 lados["left"] = true
         }
     

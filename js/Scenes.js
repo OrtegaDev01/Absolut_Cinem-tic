@@ -97,10 +97,7 @@ const scenes = {
                     x:30, y:-50, width:200, height:120, src:"img/assetsJogo/objetos/paredeinicial.png"
             }),
             "chao": new Chao({
-                x:30, y:70, width:200, height:250, color:"#ab4545"
-            }),
-            "chao2": new Chao({
-                x:230, y:70, width:200, height:250, color:"#ab4545"
+                x:-170, y:70, width:600, height:250, color:"#ab4545"
             }),
             "planta1": new GameObject({
                 x:40, y:45, width:32, height:32, src:"img/assetsJogo/objetos/planta.png"
@@ -110,6 +107,18 @@ const scenes = {
             }),
             "tapete": new GameObject({
                     x:93, y:75, width:80, height: 32, src:"img/assetsJogo/objetos/tapete.png"
+            }), "janela": new GameObjectAnimado({
+                    x: 30, y:50, width: 40, height:32, src:"img/assetsJogo/objetos/window.png", maxFrame:12, animations:{
+                        "idle":[[0, 0], [40, 0], [80, 0], [120, 0], [160, 0], [200, 0], [240, 0], [280, 0],
+                                [0, 32], [40, 32], [80, 32], [120, 32], [160, 32], [200, 32], [240, 32], [280, 32],
+                                [0, 64], [40, 64], [80, 64], [120, 64], [160, 64], [200, 64], [240, 64], [280, 64],
+                                [0, 96], [40, 96], [80, 96], [120, 96], [160, 96], [200, 96], [240, 96], [280, 96],
+                                [0, 128], [40, 128], [80, 128], [120, 128], [160, 128], [200, 128], [240, 128], [280, 128],
+                                [0, 160], [40, 160], [80, 160], [120, 160], [160, 160], [200, 160], [240, 160], [280, 160],
+                                [0, 192], [40, 192], [80, 192], [120, 192], [160, 192], [200, 192], [240, 192], [280, 192],
+                                [0, 224], [40, 224], [80, 224], [120, 224], [160, 224], [200, 224], [240, 224], [280, 224],
+                                [0, 256], [40, 256]]
+                    }
             })
             
         }
@@ -121,6 +130,9 @@ const scenes = {
         }, sceneAnimations:function(){
             Object.keys(scenes["cinema"]["GameObjects"]).forEach(function(e){
                 scenes["cinema"]["GameObjects"][e].draw()
+                if(typeof scenes["cinema"]["GameObjects"][e].animateObject == "function"){
+                    scenes["cinema"]["GameObjects"][e].animateObject("idle")
+                }
             })
             player.draw()
             player.animatePlayer("idle")
